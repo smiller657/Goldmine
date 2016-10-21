@@ -43,5 +43,4 @@ class Box
 		int goldLost; //holds the amount of gold lost
 		bool selected; //determines if the box has been selected
 };
-#include "Box.cpp"
 #endif

@@ -1,5 +1,5 @@
 run: dynamicList.o Box.o GoldMine.o playGame.o 
-	g++ dynamicList.o Box.o GoldMine.o playGame.o  -o run
+	g++ dynamicList.o Box.o GoldMine.o playGame.o -o run
 playGame.o: playGame.cpp
 	g++ -c playGame.cpp
 GoldMine.o: GoldMine.h GoldMine.cpp

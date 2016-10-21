@@ -4,20 +4,23 @@
 //hidden until the user interacts with the game.
 #ifndef GOLDMINEH
 #define GOLDMINEH
+#include "dynamicList.h"
+#include "Box.h"
 
 class GoldMine
 {
 	public:
 		GoldMine();
-		void randomRowColumn(int &row, int &column);
-		void setMyBox(char c);
-		void setRainbow();
-		void setGold();
-		void setCoal();
+//		void randomRowColumn(int &row, int &column);
+//		void setMyBox(char c);
+//		void setRainbow();
+//		void setGold();
+//		void setCoal();
 //		string rainbowMessage();
-		void revealSelection(int row, int column);
+//		void revealSelection(int row, int column);
 		void printGoldMine();
 		int getGold();
+		void initialize();
 	private:
 		dynamicList<Box> gm[6];
 		int gold;

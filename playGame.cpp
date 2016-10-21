@@ -5,9 +5,7 @@
 
 #include <iostream>
 #include <string>
-#include <ctime>
-#include <climits>
-#include <cstdlib>
+#include "GoldMine.h"
 
 using namespace std;
 
@@ -18,7 +16,7 @@ int main() {
 	//Seed the number generator
 	//srand(time(0)%INT_MAX);
 	
-	GoldMine gm = Goldmine();
+	GoldMine gm = GoldMine();
 	gm.printGoldMine();
 	return 0;
 }

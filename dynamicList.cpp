@@ -4,6 +4,7 @@
 // Implementation file for Unsorted List ADT.
 #ifndef DYNAMICLISTCPP
 #define DYNAMICLISTCPP
+#include <iostream>
 #include "dynamicList.h"
 
 template <class ITEMTYPE>
@@ -16,7 +17,7 @@ dynamicList<ITEMTYPE>::dynamicList()		// Class constructor
 	//	element[i] = 0;
 }
 
-template <class ITEMTYPE>
+/*template <class ITEMTYPE>
 dynamicList<ITEMTYPE>::dynamicList(int maxnumber = defmaxlistsize)		// Class constructor
 {
 	length = 0;
@@ -24,7 +25,7 @@ dynamicList<ITEMTYPE>::dynamicList(int maxnumber = defmaxlistsize)		// Class con
 	element = new ITEMTYPE[maxnumber];
 	//for (int i = 0; i < maxnumber; i++)
 	//	element[i] = 0;
-}
+}*/
 
 template <class ITEMTYPE>
 dynamicList<ITEMTYPE>::~dynamicList()
@@ -168,7 +169,7 @@ bool dynamicList<ITEMTYPE>::Insert(ITEMTYPE item, int location)
 	}
 	else
 	{
-		cout << "Error: Cannot Insert "<<item<<" List is Full.\n";
+//		cout << "Error: Cannot Insert "<<item<<" List is Full.\n";
 		return false;
 	}
 }
@@ -226,7 +227,7 @@ void dynamicList<ITEMTYPE>::Remove(ITEMTYPE &item, bool &found)
 			found = true;
 			return;
 		} else {
-			cout << "Error: "<<item<<" Not Found\n";
+//			cout << "Error: "<<item<<" Not Found\n";
 			found = false;
 			return;
 		}

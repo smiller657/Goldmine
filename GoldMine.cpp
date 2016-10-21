@@ -5,30 +5,29 @@
 #ifndef GOLDMINECPP
 #define GOLDMINECPP
 #include <string>
-#include "GoldMine.h"
-#include "Box.h"
+#include <ctime>
+#include <climits>
+#include <cstdlib>
+#include <iostream>
 #include "dynamicList.h"
+#include "Box.h"
+#include "GoldMine.h"
 
 using namespace std;
 
 GoldMine::GoldMine()
 {
-	//create an array of boxes
-	//for each row of the goldmine, create an array with 6 boxes
-	for (int i = 0; i < 6; i++) {
-		dynamicList<Box> boxList(6);
-		Box temp = Box();
-		boxList.init(temp);
-		gm[i] = boxList;
-	}
 	gold = 0;
+	Box temp;
+	for (int i = 0; i < 6; i++) {
+		gm[i].init(temp);	
+	}
+	//See the number generator
+	srand(time(0)%INT_MAX);
+	initialize();
 }
 /*
 void GoldMine::randomRowColumn(int &row, int &column)
-{
-
-}
-void GoldMine::setMyBox(char c)
 {
 
 }
@@ -61,7 +60,7 @@ void GoldMine::printGoldMine()
 {
 	for (int i = 0; i < 6; i++) {
 		for (int j = 0; j < 6; j++) {
-			Box box = gm[i].getItem[j]; 
+			Box box = gm[i].getItem(j); 
 			cout<<box.getCharacter()<<"\t";
 		}
 		cout<<endl;
@@ -72,7 +71,29 @@ int GoldMine::getGold()
 {
 	return gold;
 }
+
+void GoldMine::initialize()
+{
+	//Set total gold for game
+	gold = rand()%9000 + 1000;
+	//Iniitalize a box
+	Box temp;
+	int amount = 0;
+	bool success = true;
+	//Create a grid of boxes
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 6; j++) {
+			amount = rand()%100 + 10;
+			temp.setGoldLost(amount);
+			success = gm[i].Insert(temp, j);
+			if (!success) {
+				cout<<"Could not add box "<<i<<" "<<j<<" to grid."<<endl;
+			}
+
+		}
+	}
+}
 #endif	
 //	For reference: private:
 //dynamicList<Box> gm[6];
-//int gold;
+///int gold;

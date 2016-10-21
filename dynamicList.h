@@ -15,7 +15,7 @@ class dynamicList
 {
 public:
     dynamicList();		
-    dynamicList(int maxnumber);
+//    dynamicList(int maxnumber);
     ~dynamicList();   	
     bool Full() const;
     bool Empty() const;

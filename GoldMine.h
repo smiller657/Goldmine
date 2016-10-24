@@ -11,11 +11,11 @@ class GoldMine
 {
 	public:
 		GoldMine();
-//		void randomRowColumn(int &row, int &column);
+		void randomRowColumn(int &row, int &column);
 //		void setMyBox(char c);
-//		void setRainbow();
-//		void setGold();
-//		void setCoal();
+		void setRainbow();
+		void setGold();
+		void setCoal();
 //		string rainbowMessage();
 //		void revealSelection(int row, int column);
 		void printGoldMine();

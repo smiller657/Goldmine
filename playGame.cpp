@@ -17,6 +17,9 @@ int main() {
 	//srand(time(0)%INT_MAX);
 	
 	GoldMine gm = GoldMine();
+	gm.setRainbow();
+	gm.setGold();
+	gm.setCoal();
 	gm.printGoldMine();
 	return 0;
 }

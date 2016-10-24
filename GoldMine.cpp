@@ -26,27 +26,62 @@ GoldMine::GoldMine()
 	srand(time(0)%INT_MAX);
 	initialize();
 }
-/*
+
 void GoldMine::randomRowColumn(int &row, int &column)
 {
-
+	row = rand()%6;
+	column = rand()%6;
+	cout<<"row "<<row<<" column "<<column<<endl;
 }
 
 void GoldMine::setRainbow()
 {
-
+	int row = -1;
+	int column = -1;
+	bool set = false;
+	while (!set) {
+		randomRowColumn(row, column);
+		Box box = gm[row].getItem(column);
+		char letter = box.getCharacter();
+		if (letter == 'N') {
+			box.setCharacter('R');
+			set = gm[row].Replace(box, column);	
+		}
+	}
 }
 
 void GoldMine::setGold()
 {
-
+	int row = -1;
+	int column = -1;
+	bool set = false;
+	while (!set) {
+		randomRowColumn(row, column);
+		Box box = gm[row].getItem(column);
+		char letter = box.getCharacter();
+		if (letter == 'N') {
+			box.setCharacter('G');
+			set = gm[row].Replace(box, column);	
+		}
+	}
 }
 
 void GoldMine::setCoal()
 {
-
+	int row = -1;
+	int column = -1;
+	bool set = false;
+	while (!set) {
+		randomRowColumn(row, column);
+		Box box = gm[row].getItem(column);
+		char letter = box.getCharacter();
+		if (letter == 'N') {
+			box.setCharacter('C');
+			set = gm[row].Replace(box, column);	
+		}
+	}
 }
-
+/*
 string GoldMine::rainbowMessage()
 {
 
@@ -58,7 +93,10 @@ void GoldMine::revealSelection(int row, int column)
 }*/
 void GoldMine::printGoldMine()
 {
+	cout<<"Gold Total: "<<gold<<endl;
+	cout<<"\t0\t1\t2\t3\t4\t5\t"<<endl;
 	for (int i = 0; i < 6; i++) {
+		cout<<i<<"\t";
 		for (int j = 0; j < 6; j++) {
 			Box box = gm[i].getItem(j); 
 			cout<<box.getCharacter()<<"\t";
@@ -75,7 +113,7 @@ int GoldMine::getGold()
 void GoldMine::initialize()
 {
 	//Set total gold for game
-	gold = rand()%9000 + 1000;
+	gold = rand()%8000 + 1000;
 	//Iniitalize a box
 	Box temp;
 	int amount = 0;
@@ -83,7 +121,7 @@ void GoldMine::initialize()
 	//Create a grid of boxes
 	for (int i = 0; i < 6; i++) {
 		for (int j = 0; j < 6; j++) {
-			amount = rand()%100 + 10;
+			amount = rand()%90 + 10;
 			temp.setGoldLost(amount);
 			success = gm[i].Insert(temp, j);
 			if (!success) {

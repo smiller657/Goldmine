@@ -175,6 +175,26 @@ bool dynamicList<ITEMTYPE>::Insert(ITEMTYPE item, int location)
 }
 
 template <class ITEMTYPE>
+bool dynamicList<ITEMTYPE>::Replace(ITEMTYPE item, int location)
+// item is in the list; length has been incremented.
+{
+
+	if (!Full())
+	{
+		if (location >= 0 && location < length && !Full())
+		{
+			element[location] = item;
+			return true;
+		}
+		cout << "Error: Cannot Insert at " << location << " that is out of bounds\n";
+	}
+	else
+	{
+		return false;
+	}
+}
+
+template <class ITEMTYPE>
 void dynamicList<ITEMTYPE>::Remove(ITEMTYPE &item, bool &found, int location)
 // Pre: item's key has been initialized.
 //       An element in the list has a key that matches item's.

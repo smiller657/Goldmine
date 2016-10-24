@@ -22,6 +22,7 @@ public:
 	void Getlast(ITEMTYPE &item, bool &found);
 	bool Insert(ITEMTYPE item);
 	bool Insert(ITEMTYPE item, int location);
+	bool Replace(ITEMTYPE item, int location);
 	void Remove(ITEMTYPE &item, bool &found);
 	void Remove(ITEMTYPE &item, bool &found, int location);
 	bool Search(ITEMTYPE item, int &location);

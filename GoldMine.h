@@ -12,14 +12,14 @@ class GoldMine
 	public:
 		GoldMine();
 		void randomRowColumn(int &row, int &column);
-//		void setMyBox(char c);
 		void setRainbow();
 		void setGold();
 		void setCoal();
-//		string rainbowMessage();
-//		void revealSelection(int row, int column);
+		string rainbowMessage();
+		void revealSelection(int row, int column);
 		void printGoldMine();
 		int getGold();
+		Box getBox(int row, int column);
 		void initialize();
 	private:
 		dynamicList<Box> gm[6];

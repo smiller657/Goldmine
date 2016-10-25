@@ -300,6 +300,12 @@ void dynamicList<ITEMTYPE>::init(ITEMTYPE initValue)
 
 template <class ITEMTYPE>
 ITEMTYPE dynamicList<ITEMTYPE>::getItem(int index) {
-	return element[index];
+	if (index >= 0 && index < length) {
+		return element[index];
+	} else if (index > length && index < size) {
+		cout<<"Error: Index "<<index<<" is outside of the current array length."<<endl;
+	} else {
+		cout<<"Error: Index "<<index<<" is out of bounds."<<endl;
+	}
 }
 #endif

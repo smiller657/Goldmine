@@ -1,6 +1,6 @@
 //Samantha Miller
 //CPSC-340-01
-//Goldmine Project
+//Project 2: Goldmine
 // Implementation file for Unsorted List ADT.
 #ifndef DYNAMICLISTCPP
 #define DYNAMICLISTCPP

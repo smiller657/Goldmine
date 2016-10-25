@@ -1,5 +1,6 @@
 //Samantha Miller
 //CPSC-340-01
+//Project 2: Goldmine
 //Implementation file for the Object of a 6 by 6 table, filed with Box objects,
 //hidden until the user interacts with the game.
 #ifndef GOLDMINECPP

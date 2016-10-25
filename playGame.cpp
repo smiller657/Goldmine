@@ -1,7 +1,7 @@
 //Smaantha Miller
 //CPSC-340-01
-//Goldmine Project: This file contains the main function and controls the 
-//workflow of the game.
+//Project 2: Goldmine
+//This file contains the main function and controls the workflow of the game.
 
 #include <iostream>
 #include <string>

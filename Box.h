@@ -1,5 +1,6 @@
 //Samantha Miller
 //CPSC-340-01
+//Project 2: Goldmine
 //Header file for the class that constructs a cell of the goldmine.
 #ifndef BOXH
 #define BOXH

@@ -1,6 +1,6 @@
 //Samantha Miller
 //CPSC-340-01
-//Goldmine Project
+//Project 2: Goldmine
 // File dynamicList.h: Header file for Unsorted List ADT.
 #ifndef DYNAMICLISTH
 #define DYNAMICLISTH

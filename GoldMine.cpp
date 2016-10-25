@@ -1,6 +1,6 @@
 //Samantha Miller
 //CPSC-340-01
-//Header file for the Object of a 6 by 6 table, filed with Box objects,
+//Implementation file for the Object of a 6 by 6 table, filed with Box objects,
 //hidden until the user interacts with the game.
 #ifndef GOLDMINECPP
 #define GOLDMINECPP
@@ -31,7 +31,6 @@ void GoldMine::randomRowColumn(int &row, int &column)
 {
 	row = rand()%6;
 	column = rand()%6;
-	cout<<"row "<<row<<" column "<<column<<endl;
 }
 
 void GoldMine::setRainbow()

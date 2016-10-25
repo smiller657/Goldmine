@@ -1,13 +1,13 @@
 //Samantha Miller
 //CPSC-340-01
-//Lab 6: Convert DynamicList to a template class.
+//Goldmine Project
 // Implementation file for Unsorted List ADT.
 #ifndef DYNAMICLISTCPP
 #define DYNAMICLISTCPP
 #include <iostream>
 #include "dynamicList.h"
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 dynamicList<ITEMTYPE>::dynamicList()		// Class constructor
 {
 	length = 0;
@@ -18,18 +18,18 @@ dynamicList<ITEMTYPE>::dynamicList()		// Class constructor
 }
 
 /*template <class ITEMTYPE>
-dynamicList<ITEMTYPE>::dynamicList(int maxnumber = defmaxlistsize)		// Class constructor
-{
-	length = 0;
-	size = maxnumber;
-	element = new ITEMTYPE[maxnumber];
-	//for (int i = 0; i < maxnumber; i++)
-	//	element[i] = 0;
+  dynamicList<ITEMTYPE>::dynamicList(int maxnumber = defmaxlistsize)		// Class constructor
+  {
+  length = 0;
+  size = maxnumber;
+  element = new ITEMTYPE[maxnumber];
+//for (int i = 0; i < maxnumber; i++)
+//	element[i] = 0;
 }*/
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 dynamicList<ITEMTYPE>::~dynamicList()
-// Post: List is empty; all items have been deallocated.
+	// Post: List is empty; all items have been deallocated.
 {
 	delete[] element;
 	length = 0;
@@ -68,12 +68,12 @@ bool dynamicList<ITEMTYPE>::Empty() const
 		return false;
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 bool dynamicList<ITEMTYPE>::Search(ITEMTYPE item)
-// Pre:  Key member(s) of item is initialized.
-// Post: If found, item's key matches an element's key in the list and 
-//       a copy of that element has been stored in item; otherwise, item is
-//       unchanged. 
+	// Pre:  Key member(s) of item is initialized.
+	// Post: If found, item's key matches an element's key in the list and 
+	//       a copy of that element has been stored in item; otherwise, item is
+	//       unchanged. 
 {
 	bool moreToSearch;
 	int location = 0;
@@ -95,12 +95,12 @@ bool dynamicList<ITEMTYPE>::Search(ITEMTYPE item)
 	return false;
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 bool dynamicList<ITEMTYPE>::Search(ITEMTYPE item, int &location)
-// Pre:  Key member(s) of item is initialized.
-// Post: If found, item's key matches an element's key in the list and 
-//       a copy of that element has been stored in item; otherwise, item is
-//       unchanged. 
+	// Pre:  Key member(s) of item is initialized.
+	// Post: If found, item's key matches an element's key in the list and 
+	//       a copy of that element has been stored in item; otherwise, item is
+	//       unchanged. 
 {
 	bool moreToSearch;
 	location = 0;
@@ -121,9 +121,9 @@ bool dynamicList<ITEMTYPE>::Search(ITEMTYPE item, int &location)
 	return false;
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 bool dynamicList<ITEMTYPE>::Insert(ITEMTYPE item)
-// item is in the list; length has been incremented.
+	// item is in the list; length has been incremented.
 {
 
 	if (!Full())
@@ -140,9 +140,9 @@ bool dynamicList<ITEMTYPE>::Insert(ITEMTYPE item)
 
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 bool dynamicList<ITEMTYPE>::Insert(ITEMTYPE item, int location)
-// item is in the list; length has been incremented.
+	// item is in the list; length has been incremented.
 {
 
 	if (!Full())
@@ -169,36 +169,31 @@ bool dynamicList<ITEMTYPE>::Insert(ITEMTYPE item, int location)
 	}
 	else
 	{
-//		cout << "Error: Cannot Insert "<<item<<" List is Full.\n";
+		//		cout << "Error: Cannot Insert "<<item<<" List is Full.\n";
 		return false;
 	}
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 bool dynamicList<ITEMTYPE>::Replace(ITEMTYPE item, int location)
-// item is in the list; length has been incremented.
+	// item is in the list; length has been incremented.
 {
 
-	if (!Full())
+	if (location >= 0 && location < length)
 	{
-		if (location >= 0 && location < length && !Full())
-		{
-			element[location] = item;
-			return true;
-		}
+		element[location] = item;
+		return true;
+	} else {
 		cout << "Error: Cannot Insert at " << location << " that is out of bounds\n";
-	}
-	else
-	{
 		return false;
 	}
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 void dynamicList<ITEMTYPE>::Remove(ITEMTYPE &item, bool &found, int location)
-// Pre: item's key has been initialized.
-//       An element in the list has a key that matches item's.
-// Post: No element in the list has a key that matches item's.
+	// Pre: item's key has been initialized.
+	//       An element in the list has a key that matches item's.
+	// Post: No element in the list has a key that matches item's.
 {
 	// Locate node to be deleted.
 	if (!Empty())
@@ -226,11 +221,11 @@ void dynamicList<ITEMTYPE>::Remove(ITEMTYPE &item, bool &found, int location)
 	}
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 void dynamicList<ITEMTYPE>::Remove(ITEMTYPE &item, bool &found)
-// Pre: item's key has been initialized.
-//       An element in the list has a key that matches item's.
-// Post: No element in the list has a key that matches item's.
+	// Pre: item's key has been initialized.
+	//       An element in the list has a key that matches item's.
+	// Post: No element in the list has a key that matches item's.
 {
 	// Locate node to be deleted.
 	if (!Empty())
@@ -247,7 +242,7 @@ void dynamicList<ITEMTYPE>::Remove(ITEMTYPE &item, bool &found)
 			found = true;
 			return;
 		} else {
-//			cout << "Error: "<<item<<" Not Found\n";
+			//			cout << "Error: "<<item<<" Not Found\n";
 			found = false;
 			return;
 		}
@@ -267,16 +262,16 @@ int dynamicList<ITEMTYPE>::currentSize() const
 	return length;
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 void dynamicList<ITEMTYPE>::Clear()
-// Post: Current position has been initialized.
+	// Post: Current position has been initialized.
 {
 	length = 0;
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 void dynamicList<ITEMTYPE>::Getlast(ITEMTYPE &item, bool &found)
-// Post:  Current position has been updated; item is current item.
+	// Post:  Current position has been updated; item is current item.
 {
 	if (!Empty())
 	{
@@ -290,7 +285,7 @@ void dynamicList<ITEMTYPE>::Getlast(ITEMTYPE &item, bool &found)
 	}
 }
 
-template <class ITEMTYPE>
+	template <class ITEMTYPE>
 void dynamicList<ITEMTYPE>::init(ITEMTYPE initValue)
 {
 	for (int i = 0; i < size - 1; i++) {
